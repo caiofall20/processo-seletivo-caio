@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="”pt-br”">
+  <head>
+    <title>Tarefa- LogAp</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="/static/js/uploaddownloadfiles.js"></script>
+    <script src="/static/js/ListFiles.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Tarefa- LogAp</h1>
+    </header>
+    <section id="task1" class="container">
+      <div class="title">
+        <h3>Tarefa 1</h3>
+      </div>
+      <form id="uploadSingleFileForm" onsubmit="return false;">
+        <input
+          type="text"
+          id="name"
+          placeholder="Informe o nome da curva de potência"
+          name="name_file"
+          required
+        />
+        <label for="file" id="label-file">
+          <div class="info">
+            <p id="filename">Anexo o arquivo csv para upload</p>
+          </div>
+          <div class="icon">
+            <span class="material-icons"> cloud_download </span>
+          </div>
+        </label>
+        <input type="file" id="file" name="file" required" />
+        <button type="submit" id="btnUploadSingleFileSubmit">Enviar</button>
+        <div id="response" style="display:none">
+        </div>
+      </form>
+      <select id="curvas" name="csv-files" id="csv-files" onChange="test()">
+        <option selected disabled value=""></option>
+      </select>
+    </section>
+
+    <section id="task2" class="container">
+      <div class="title">
+        <h3>Tarefa 2</h3>
+      </div>
+      <form id="form1" onsubmit="return false;">
+        <input
+          type="number"
+          id="number"
+          placeholder="Digite um número inteiro para adicionar a lista"
+        />
+        <input type="hidden" id="number_input" name="numbers[]" value="" />
+        <button id="btn1">Adicionar</button>
+      </form>
+      <div id="list"></div>
+      <form onsubmit="return false;">
+        <input
+          type="number"
+          id="number_check"
+          placeholder="Digite um número inteiro"
+        />
+        <button id="btn2" onclick="sums(numbers)">Verificar</button>
+      </form>
+      <div id="div-pairs"></div>
+    </section>
+
+    <script src="/static/js/Tarefa2.js"></script>
+  </body>
+</html>
